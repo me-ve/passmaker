@@ -1,0 +1,39 @@
+body {
+    margin: 5px 5px 5px 5px;
+    background-color: #347056;
+    color: #e7e4e5;
+    font-family: Helvetica;
+}
+
+input,
+button {
+    margin: auto;
+    text-align: center;
+    font-family: Helvetica;
+    border: 1px solid #e7e4e5;
+    border-radius: 5px;
+    background-color: #529378;
+    color: #e7e4e5;
+}
+
+button {
+    font-size: 18px;
+}
+
+#logo {
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+#passdiv,
+#settingsdiv,
+#buttondiv {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#password {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+}

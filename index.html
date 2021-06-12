@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Passmaker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <form method="POST">
+        <div class="container">
+            <p class="text-center" id="logo">
+                PASSMAKER
+            </p>
+            <div class="text-justify" id="description">
+                Check the various checkboxes to generate some password with specified length. Then you can copy it straight to the clipboard.<br> The maximum length of the password is 128 characters.
+            </div>
+            <div class="row" id="settingsdiv">
+                <div class="col">
+                    <label for="small_letters">a-z</label><br>
+                    <input type="checkbox" id="small_letters" name="small_letters">
+                </div>
+                <div class="col">
+                    <label for="large_letters">A-Z</label><br>
+                    <input type="checkbox" id="large_letters" name="large_letters">
+                </div>
+                <div class="col">
+                    <label for="numbers">0-9</label><br>
+                    <input type="checkbox" id="numbers" name="numbers">
+                </div>
+                <div class="col">
+                    <label for="special_characters">special</label><br>
+                    <input type="checkbox" id="special_characters" name="special_characters">
+                </div>
+                <div class="col">
+                    <label for="length">length</label><br>
+                    <input type="number" id="length" name="length" value="12" onkeyup="validateLength()" size="3" min="6" max="128">
+                </div>
+            </div>
+            <div class="row" id="passdiv">
+                <input type="text" id="password"><br>
+            </div>
+            <div class="row" id="buttondiv">
+                <div class="col">
+                    <button onclick="generatePassword()" type="button">Generate</button><br>
+                </div>
+                <div class="col">
+                    <button onclick="copyPasswordToClipboard()" type="button">Copy</button><br>
+                </div>
+            </div>
+        </div>
+        <script src="validate_length.js"></script>
+        <script src="copy_to_clipboard.js"></script>
+        <script src="get_settings.js"></script>
+        <script src="password.js"></script>
+    </form>
+</body>
+
+</html>
