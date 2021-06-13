@@ -8,26 +8,35 @@ function getCharactersBetween(begin, end) {
 
 function generatePassword() {
     let settings = getSettings();
-    let charset = "";
-    if (settings.numbers) {
-        charset += getCharactersBetween('0', '9');
+    if (settings.methodGiven) {
+        if (settings.length) {
+            let charset = "";
+            if (settings.numbers) {
+                charset += getCharactersBetween('0', '9');
+            }
+            if (settings.largeLetters) {
+                charset += getCharactersBetween('A', 'Z');
+            }
+            if (settings.smallLetters) {
+                charset += getCharactersBetween('a', 'z');
+            }
+            if (settings.specialCharacters) {
+                charset += getCharactersBetween('!', '/');
+                charset += getCharactersBetween(':', '@');
+                charset += getCharactersBetween('[', '`');
+                charset += getCharactersBetween('{', '~');
+            }
+            let password = "";
+            for (let i = 0; i < settings.length; i++) {
+                let charNumber = (Math.random() * charset.length) | 0;
+                password += charset[charNumber];
+            }
+            document.getElementById("password").value = password;
+        } else {
+            document.getElementById("password").placeholder = "Please specify the length for the password";
+        }
+    } else {
+        document.getElementById("password").value = "";
+        document.getElementById("password").placeholder = "Please specify the characters for the password";
     }
-    if (settings.largeLetters) {
-        charset += getCharactersBetween('A', 'Z');
-    }
-    if (settings.smallLetters) {
-        charset += getCharactersBetween('a', 'z');
-    }
-    if (settings.specialCharacters) {
-        charset += getCharactersBetween('!', '/');
-        charset += getCharactersBetween(':', '@');
-        charset += getCharactersBetween('[', '`');
-        charset += getCharactersBetween('{', '~');
-    }
-    let password = "";
-    for (let i = 0; i < settings.length; i++) {
-        let charNumber = (Math.random() * charset.length) | 0;
-        password += charset[charNumber];
-    }
-    document.getElementById("password").value = password;
 }

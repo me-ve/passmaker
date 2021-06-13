@@ -5,6 +5,7 @@ class Settings {
         this.numbers = numbers;
         this.specialCharacters = specialCharacters;
         this.length = length;
+        this.methodGiven = (smallLetters || largeLetters || numbers || specialCharacters);
     }
 }
 
