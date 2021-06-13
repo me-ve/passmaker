@@ -16,7 +16,8 @@
                 PASSMAKER
             </p>
             <div class="text-justify" id="description">
-                Check the various checkboxes to generate some password with specified length. Then you can copy it straight to the clipboard.<br> The maximum length of the password is 128 characters.
+                Check the various checkboxes to generate some password with specified length. Then you can copy it straight to the clipboard.<br> The maximum length of the password is 128 characters. You can generate up to 256 passwords with specified
+                conditions.
             </div>
             <div class="row" id="settingsdiv">
                 <div class="col">
@@ -39,9 +40,13 @@
                     <label for="length">length</label><br>
                     <input type="number" id="length" name="length" value="12" onkeyup="validateLength()" size="3" min="6" max="128">
                 </div>
+                <div class="col">
+                    <label for="length">amount</label><br>
+                    <input type="number" id="amount" name="amount" value="2" onkeyup="validateAmount()" size="3" min="1" max="256">
+                </div>
             </div>
             <div class="row" id="passdiv">
-                <input type="text" id="password" readonly><br>
+                <textarea id="password" rows="5" readonly></textarea><br>
             </div>
             <div class="row" id="buttondiv">
                 <div class="col">
@@ -53,8 +58,10 @@
             </div>
         </div>
         <script src="validate_length.js"></script>
+        <script src="validate_amount.js"></script>
         <script src="copy_to_clipboard.js"></script>
         <script src="get_settings.js"></script>
+        <script src="set_password_field_type.js"></script>
         <script src="password.js"></script>
     </form>
 </body>

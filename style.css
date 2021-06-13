@@ -6,7 +6,8 @@ body {
 }
 
 input,
-button {
+button,
+textarea {
     margin: auto;
     text-align: center;
     font-family: Helvetica;
@@ -14,6 +15,10 @@ button {
     border-radius: 5px;
     background-color: #529378;
     color: #e7e4e5;
+}
+
+textarea {
+    resize: none;
 }
 
 button {
@@ -27,7 +32,8 @@ button {
 
 #passdiv,
 #settingsdiv,
-#buttondiv {
+#buttondiv,
+#amountdiv {
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: center;
